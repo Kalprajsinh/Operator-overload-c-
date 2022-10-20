@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+class overload
+{
+public:
+    int x=2;
+    overload (int a=0)
+    {
+        x=a;
+    }
+
+    overload operator + (overload c2)
+    {
+        overload r;
+        r.x=x * c2.x;
+        return r;
+    }
+    void print()
+    {
+        cout <<x<<endl;
+    }
+};
+
+int main()
+{
+    overload a(5),b(20),c;
+    c = a + b ;
+    c.print();
+
+    return 0;
+}
